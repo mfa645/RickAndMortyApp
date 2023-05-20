@@ -7,13 +7,12 @@
 /bazel-out
 
 # Node
+/frontend/node_modules
 /node_modules
 node_modules
 npm-debug.log
 yarn-error.log
-C:\Users\keybi\Mariano_Data\UAL\4ºCarrera\DRA\RickAndMortyApp\frontend\node_modules
-*.node_modules
-
+RickAndMortyApp\frontend\node_modules
 # IDEs and editors
 .idea/
 .project

@@ -1,1 +1,203 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+:root {
+    --blue: #21222a;
+    --blue-90: #262838;
+    --blue-80: #2e3144;
+    --blue-70: #3c4052;
+    --blue-60: #62677d;
+    --white: #ffffff;
+    --gray: #9092a4;
+    --red: #DD2E44;
+    --orange-gradient: linear-gradient(180deg, #3bfbdb, #0299a6);
+    --green-gradient: linear-gradient(90deg, #b3ffab, #12fff7);
+    --pink-gradient: linear-gradient(90deg, #fa669c, #e13387);
+    --purple-gradient: linear-gradient(90deg, #8257fc, #6736f1);
+    --background-opacity: #0f1025ed;
+    --card-opacity: #282e549b;
+    --titillium: "Titillium Web", Arial, Helvetica, sans-serif;
+    --krub: Krub, Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+    font-family: inherit;
+}
+
+body {
+    margin: 0;
+    background: var(--blue);
+    font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+    display: flex;
+    gap: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 30px;
+    color: white;
+    font-weight: 700;
+    margin: 0;
+}
+
+h3 {
+    font-size: 25px;
+    color: white;
+    font-weight: 700;
+    margin: 0;
+}
+
+h4 {
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.no-background {
+    background: none;
+}
+
+mat-toolbar.section-header {
+    justify-content: space-between;
+    background: var(--blue);
+    margin: 0;
+    padding: 0;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+mat-icon {
+    width: auto !important;
+    height: auto !important;
+}
+
+app-root {
+    width: 100%;
+}
+
+.grid-list {
+    // width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+    grid-gap: 30px;
+    // overflow-y: scroll;
+    justify-content: space-around;
+    align-content: start;
+}
+
+@media (max-width: 800px) {
+
+    .grid-list {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+
+    .grid-list {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    }
+}
+
+
+.clickable {
+    cursor: pointer;
+}
+
+.forbidden {
+    cursor: not-allowed;
+}
+
+.clickable label {
+    pointer-events: none;
+}
+
+.mdc-dialog__surface {
+    background: none !important;
+}
+
+mat-snack-bar-container {
+    margin-bottom: 35px !important;
+}
+
+.mdc-snackbar__surface {
+    background-color: var(--red) !important;
+}
+
+.mat-mdc-snack-bar-action {
+    color: var(--white) !important;
+}
+
+.game-container {
+    width: 100vw;
+    height: calc(100vh - 80px);
+    position: fixed;
+    bottom: 0;
+    background-color: var(--blue);
+    padding: 40px;
+    padding-top: 20px;
+    z-index: 1000;
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: var(--blue-80);
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: var(--blue-70);
+}
+
+app-deck {
+    width: 100%;
+}
+
+app-card {
+    width: 100%;
+}
+
+@media (max-width: 800px) {
+    mat-toolbar.section-header {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+    }
+}
+
+.sidenav-content > *:nth-child(2) {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+app-loader {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
