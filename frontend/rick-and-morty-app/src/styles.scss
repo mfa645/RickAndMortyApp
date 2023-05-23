@@ -79,7 +79,7 @@ mat-toolbar.section-header {
     background: var(--blue);
     margin: 0;
     padding: 0;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     align-items: flex-start;
 }
 
@@ -95,8 +95,8 @@ app-root {
 .grid-list {
     // width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
-    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-gap: 20px;
     // overflow-y: scroll;
     justify-content: space-around;
     align-content: start;
@@ -197,6 +197,32 @@ app-loader {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.ngx-pagination {
+  padding-left: 0px !important;
+}
+.ngx-pagination a{
+color: white !important;
+}
+
+
+.ngx-pagination .current,
+.btn-info {
+  background: #17a2b8 !important;
+  border: transparent !important;
+  border-radius: 20px !important;
+}
+
+.ngx-pagination .current:hover {
+  background: #17a2b8 !important;
+  border-radius: 20px !important;
+  border: transparent !important;
+}
+.ngx-pagination :hover {
+  background: #17a2b8 !important;
+  border-radius: 20px !important;
+  border: transparent !important;
 }
 
 html, body { height: 100%; }

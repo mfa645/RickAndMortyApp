@@ -55,8 +55,8 @@ body {
 
 mat-form-field div.mat-mdc-text-field-wrapper {
     border-radius: 10px;
-    background-color: #282e54 !important;
-    color: #818ebb;
+    background-color: #2e3144 !important;
+    color: #62677d;
 }
 
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
@@ -65,7 +65,7 @@ mat-form-field div.mat-mdc-text-field-wrapper {
 
 .mdc-text-field:not(.mdc-text-field--disabled)
     .mdc-text-field__input::placeholder {
-    color: #818ebb;
+    color: #62677d;
 }
 
 .mdc-line-ripple {
@@ -77,7 +77,7 @@ mat-form-field div.mat-mdc-text-field-wrapper {
 }
 
 .mat-mdc-autocomplete-panel {
-    background-color: #282e54;
+    background-color: #2e3144;
 }
 
 span.mdc-list-item__primary-text {
@@ -97,4 +97,20 @@ span.mdc-list-item__primary-text {
 .mat-mdc-raised-button:disabled {
     color: #8690BF50 !important;
     background-color: #282E5450 !important;
+}
+.ngx-pagination {
+  padding-left: 0px !important;
+}
+
+.ngx-pagination .current,
+.btn-info {
+  background: #12fff7 !important;
+  border: transparent !important;
+  border-radius: 20px !important;
+}
+
+.ngx-pagination .current:hover {
+  background: #12fff7 !important;
+  border-radius: 20px !important;
+  border: transparent !important;
 }

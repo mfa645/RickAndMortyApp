@@ -1,20 +1,20 @@
 <mat-toolbar class="section-header">
   <h2>Rick & Morty Characters </h2>
   <app-autocomplete (filteredOutput)="getFiltered($event)" [array]="chars"
-    [control]="autocompleteControl"></app-autocomplete>
+    [control]="autocompleteControl" [filterProperty]="filterProperty"></app-autocomplete>
 </mat-toolbar>
+<pagination-controls (click)="onPageChange(page)" (pageChange)="page = $event" previousLabel="Previous" nextLabel="Next" ></pagination-controls>
 <div class="grid-list" *ngIf="chars?.length != 0; else notFound" >
-  <app-char-card class="clickable" routerLink="/chars/{{ char.id }}"
-  *ngFor="let char of chars | paginate: {itemsPerPage : 20, currentPage: page , totalItems: queryCount }" [char]=char></app-char-card>
-  <pagination-controls (click)="onPageChange(page)" (pageChange)="page = $event" previousLabel="Previous" nextLabel="Next" ></pagination-controls>
+  <app-char-card  routerLink="/chars/{{ char.id }}"
+  *ngFor="let char of filteredChars | paginate: {itemsPerPage : 20, currentPage: page , totalItems: queryCount }" [char]=char></app-char-card>
 </div>
 <ng-template #notFound>
-  <div class="card-not-found">
+  <div class="char-not-found">
     <p>
+      <app-char-card name="Not Found"></app-char-card>
       No char with name "{{ cutString(autocompleteControl.value!) }}" has been found
     </p>
     <div>
-      <!-- <app-card name="Not Found"></app-card> -->
     </div>
   </div>
 </ng-template>

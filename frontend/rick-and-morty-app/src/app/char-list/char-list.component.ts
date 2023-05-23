@@ -18,9 +18,8 @@ export class CharListComponent {
   chars!: Character[];
   filteredChars!: Character[];
   isLoading: boolean = false;
-  char!:Character;
   queryCount!:number;
-  query:string="";
+  filterProperty:string = "name";
 
 
   constructor(private charApi: CharApiService) {}
@@ -29,13 +28,13 @@ export class CharListComponent {
       this.queryCount = Number(result);
     });
 
-    this.charApi.getCharactersByName(0,this.query).subscribe((response)=>{
+    this.charApi.getCharacters(0).subscribe((response)=>{
       this.chars = response;
     });
   }
 
   onPageChange(page:number) {
-    this.charApi.getCharactersByName(page,this.query).subscribe((response)=>{
+    this.charApi.getCharacters(page).subscribe((response)=>{
       this.chars = response;
     });
   }

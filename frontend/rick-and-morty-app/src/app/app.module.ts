@@ -19,6 +19,8 @@ import { RemoteApiService } from './services/remote-api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgxPaginationModule } from 'ngx-pagination';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 
 
@@ -45,7 +47,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     BrowserAnimationsModule,
     HttpClientModule,
     MatSnackBarModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: CharApiService, useClass: RemoteCharApiService },

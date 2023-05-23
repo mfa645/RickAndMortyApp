@@ -6,28 +6,29 @@ import { MatAutocomplete } from '@angular/material/autocomplete';
 import { EventEmitter } from '@angular/core';
 import { Character } from '../models/Character';
 
+
 @Component({
   selector: 'app-autocomplete',
   templateUrl: './autocomplete.component.html',
-  styleUrls: ['./autocomplete.component.scss']
+  styleUrls: ['./autocomplete.component.scss'],
 })
-export class AutocompleteComponent<T> {
+export class AutocompleteComponent<Character> {
   @ViewChild('autocomplete', { static: false })
   automcompleteElement: ElementRef = new ElementRef(null);
 
   @Input() placeholder: string = 'Search...';
-  @Input() array!: T[];
+  @Input() array!: Character[];
   @Input() control = new FormControl('');
   @Input() filterProperty: string = '';
 
-  @Output() filteredOutput = new EventEmitter<T[]>();
+  @Output() filteredOutput = new EventEmitter<Character[]>();
 
-  filteredArray!: Observable<T[]>;
-  filterPropertyKey!: keyof T;
-  type!: Character;
+  filteredArray!: Observable<Character[]>;
+  filterPropertyKey!: keyof Character;
+  type!: string;
 
   ngOnChanges(): void {
-    this.filterPropertyKey = this.filterProperty as keyof T;
+    this.filterPropertyKey = this.filterProperty as keyof Character;
     this.filteredArray = this.control.valueChanges.pipe(
       startWith(''),
       map((value) => this._filter(value || ''))
@@ -35,9 +36,9 @@ export class AutocompleteComponent<T> {
     this.filteredOutput.emit(this.array);
   }
 
-  private _filter(value: string): T[] {
+  private _filter(value: string): Character[] {
     const filterValue = value.toLowerCase();
-    let filtered: T[] = [];
+    let filtered: Character[] = [];
 
     if (!value) {
       filtered = this.array;
@@ -57,5 +58,4 @@ export class AutocompleteComponent<T> {
 
     return filtered;
   }
-
 }
