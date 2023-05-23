@@ -20,6 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgxPaginationModule } from 'ngx-pagination';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { CharDetailsComponent } from './char-details/char-details.component';
+
 
 
 
@@ -34,7 +37,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     HeaderComponent,
     CharListComponent,
     AutocompleteComponent,
-    CharCardComponent
+    CharCardComponent,
+    CharDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +54,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     NgxPaginationModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [
     { provide: CharApiService, useClass: RemoteCharApiService },

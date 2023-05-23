@@ -1,10 +1,10 @@
 <article class="characterCardWrapper">
   <div class="imgWrapper clickable">
-    <img src={{char.image}} alt="{{char.name}}">
+    <img src={{char.image}} (click)="onCharSelect()" alt="{{char.name}}">
   </div>
   <div class=contentWrapper>
     <div class="section">
-      <a class="clickable " href="">
+      <a class="clickable " (click)="onCharSelect()" >
         <h2 class = "title">{{char.name}}</h2>
       </a>
       <span class="status">
