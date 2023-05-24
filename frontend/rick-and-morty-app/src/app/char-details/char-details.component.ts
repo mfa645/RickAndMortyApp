@@ -20,6 +20,9 @@ export class CharDetailsComponent implements OnInit {
   isFav: boolean = false;
   wasFav!: number;
   favChar!: FavCharacter;
+  requestFailed: boolean = false;
+  error: string = "ERROR : Comments name can't be over 50 characters.";
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -61,6 +64,11 @@ export class CharDetailsComponent implements OnInit {
         console.log('char updated');
         this.favCharApi.updateFavChar(this.favChar.id, this.favChar).subscribe({
           error: () => {},
+        });
+        this.snackBar.open('Comments updated.', '', {
+          duration: 3000,
+          verticalPosition: 'top',
+          horizontalPosition: 'center',
         });
       }
     }

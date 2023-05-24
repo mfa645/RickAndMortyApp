@@ -84,3 +84,18 @@ h1 {
   font-weight: bold;
   color: white;
 }
+input{
+  background-color: #3f414f;
+  color: white;
+  font-size: 20px;
+  border: transparent;
+  width: 550px;
+  border-radius: 0px;
+}
+
+input:focus {
+border-color: aqua;
+  border: transparent;
+  width: 550px;
+  border-radius: 0px;
+}

@@ -14,22 +14,31 @@
       </h1>
       <hr>
       <section>
-        <h2 class="text-gray">Status :</h2><span [ngClass]="{'dead':data.char.status=='Dead', 'unknown':data.char.status=='unknown'}" class="status_icon"></span><h2>{{data.char.status}}</h2>
+        <h2  >Status :</h2><span [ngClass]="{'dead':data.char.status=='Dead', 'unknown':data.char.status=='unknown'}" class="status_icon"></span><h2>{{data.char.status}}</h2>
       </section>
       <section>
-        <h2 class="text-gray">Species : {{data.char.species}}</h2>
+        <h2 >Species : {{data.char.species}}</h2>
 
       </section>
       <section>
-        <h2 class="text-gray">Gender : {{data.char.gender}}</h2>
+        <h2 >Gender : {{data.char.gender}}</h2>
       </section>
       <section>
-        <h2 class="text-gray">Created : {{data.char.created}}</h2>
+        <h2 >Created : {{data.char.created}}</h2>
       </section>
 
       <section *ngIf="favChar">
-        <h2 class="text-gray">Comments : {{favChar.comments}}</h2>
+        <h2>Comments :
+          <!-- <mat-form-field appearance="fill"> -->
+          <input matInput [(ngModel)]="favChar.comments" placeholder="Your comments.." maxlength="50" />
+          <div [hidden]="!requestFailed ">
+            <small>{{ error }}</small>
+          </div>
+        <!-- </mat-form-field> -->
+      </h2>
       </section>
+
+
     </div>
   </div>
 </div>
