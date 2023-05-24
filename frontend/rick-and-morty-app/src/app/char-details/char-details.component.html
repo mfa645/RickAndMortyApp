@@ -25,7 +25,9 @@
       </section>
 
     </div>
-    <img class="clickable favicon" src="/assets/fav.svg" alt="favicon" />
+    <mat-icon *ngIf="isFav"   (click)="addToFav()" class = "clickable favicon">favorite</mat-icon>
+    <mat-icon *ngIf="!isFav"   (click)="addToFav()" class = "clickable favicon">favorite_border</mat-icon>
+
   </div>
 </div>
 

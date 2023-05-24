@@ -27,9 +27,6 @@ import { CharDetailsComponent } from './char-details/char-details.component';
 
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

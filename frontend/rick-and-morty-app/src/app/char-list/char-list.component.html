@@ -5,7 +5,7 @@
 </mat-toolbar>
 <pagination-controls (click)="onPageChange(page)" (pageChange)="page = $event" previousLabel="Previous" nextLabel="Next" ></pagination-controls>
 <div class="grid-list" *ngIf="chars?.length != 0; else notFound" >
-  <app-char-card  routerLink="/chars/{{ char.id }}"
+  <app-char-card
   *ngFor="let char of filteredChars | paginate: {itemsPerPage : 20, currentPage: page , totalItems: queryCount }" [char]=char></app-char-card>
 </div>
 <ng-template #notFound>
