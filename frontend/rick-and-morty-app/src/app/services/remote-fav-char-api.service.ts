@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { RemoteApiService } from './remote-api.service';
 import { FavCharApiService } from './fav-char-api.service';
 import { FavCharacter } from '../models/FavCharacter';
+import { Character } from '../models/Character';
 import { Observable, map } from 'rxjs';
 import { HttpResponse } from '@angular/common/http';
 
 
 @Injectable()
 export class RemoteFavCharApiService implements FavCharApiService{
-  private favCharApiUrl = 'http://localhost:8081/api/';
+  private favCharApiUrl = 'http://localhost:8081/api';
   constructor(private remoteApi: RemoteApiService) {}
 
   public getFavChars(): Observable<FavCharacter[]>{
@@ -27,8 +28,8 @@ export class RemoteFavCharApiService implements FavCharApiService{
     return this.remoteApi.put(this.favCharApiUrl + `/favChars//${id}`, favChar);
   }
 
-  public addFavChark(favChar: FavCharacter): Observable<FavCharacter>{
-    return this.remoteApi.post<any>(`${this.favCharApiUrl}/favChars`, favChar);
+  public addFavChar(char: Character): Observable<FavCharacter>{
+    return this.remoteApi.post<any>(`${this.favCharApiUrl}/favChars`, char);
   }
 
   public deleteFavChar(id: number): Observable<FavCharacter>{

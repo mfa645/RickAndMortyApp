@@ -1,5 +1,6 @@
 import { Observable } from 'rxjs';
 import { FavCharacter } from '../models/FavCharacter';
+import { Character } from '../models/Character';
 
 export abstract class FavCharApiService {
   public abstract getFavChars(): Observable<FavCharacter[]>;
@@ -8,7 +9,7 @@ export abstract class FavCharApiService {
 
   public abstract updateFavChar(id: number, favChar: FavCharacter): Observable<any>;
 
-  public abstract addFavChark(favChar: FavCharacter): Observable<FavCharacter>;
+  public abstract addFavChar(char: Character): Observable<FavCharacter>;
 
   public abstract deleteFavChar(id: number): Observable<FavCharacter>;
 }

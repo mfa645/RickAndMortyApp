@@ -10,23 +10,14 @@ import { CharDetailsComponent } from '../char-details/char-details.component';
 })
 export class CharCardComponent {
   @Input() char!: Character;
-
+  isFavourite! : boolean ;
   constructor(private dialog: MatDialog){ }
 ngOnInit(){
 }
 
 onCharSelect(){
   const dialogRef = this.dialog.open(CharDetailsComponent, {
-    data: this.char
+    data:{ char : this.char ,isFavourite: false }
   });
-
-  // dialogRef.afterClosed().subscribe((deck) => {
-  //   this.selectedDeck = deck;
-
-  //   if (this.selectedDeck){
-  //     this.gameService.startGame(this.selectedGameMode!, this.selectedDeck);
-  //   }
-  // }); PARA COMPROBAR MODIFICACIONES CON FAVORITOS
-
 }
 }

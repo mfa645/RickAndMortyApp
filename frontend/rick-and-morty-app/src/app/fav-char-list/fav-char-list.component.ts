@@ -20,7 +20,7 @@ export class FavCharListComponent {
 
   constructor(private favCharApi: FavCharApiService) {}
   ngOnInit() {
-    this.favCharApi.getCharacters().subscribe((response)=>{
+    this.favCharApi.getFavChars().subscribe((response)=>{
       this.favChars = response;
     });
   }
