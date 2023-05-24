@@ -27,6 +27,7 @@ import { CharDetailsComponent } from './char-details/char-details.component';
 import { FavCharListComponent } from './fav-char-list/fav-char-list.component';
 import { RemoteScrapperService } from './services/remote-scrapper.service';
 import { ScrapperService } from './services/scrapper.service';
+import { QuotesComponent } from './quotes/quotes.component';
 
 
 
@@ -41,7 +42,8 @@ import { ScrapperService } from './services/scrapper.service';
     AutocompleteComponent,
     CharCardComponent,
     CharDetailsComponent,
-    FavCharListComponent
+    FavCharListComponent,
+    QuotesComponent
   ],
   imports: [
     BrowserModule,

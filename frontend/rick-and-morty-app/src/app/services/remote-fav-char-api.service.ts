@@ -25,14 +25,14 @@ export class RemoteFavCharApiService implements FavCharApiService{
   }
 
   public updateFavChar(id: number, favChar: FavCharacter): Observable<any>{
-    return this.remoteApi.put(this.favCharApiUrl + `/favChars//${id}`, favChar);
+    return this.remoteApi.put(this.favCharApiUrl + `/favChars/${id}`, favChar);
   }
 
-  public addFavChar(char: Character): Observable<FavCharacter>{
-    return this.remoteApi.post<any>(`${this.favCharApiUrl}/favChars`, char);
+  public addFavChar(char: FavCharacter): Observable<FavCharacter>{
+    return this.remoteApi.post<any>(`${this.favCharApiUrl}/favChars/`, char);
   }
 
   public deleteFavChar(id: number): Observable<FavCharacter>{
-    return this.remoteApi.delete<any>(`${this.favCharApiUrl}/favChars` + `/${id}`);
+    return this.remoteApi.delete<any>(`${this.favCharApiUrl}/favChars/${id}`);
   }
 }

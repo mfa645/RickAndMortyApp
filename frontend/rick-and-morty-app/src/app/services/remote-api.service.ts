@@ -7,7 +7,6 @@ import {
 import { Observable, of, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
-
 @Injectable({
     providedIn: 'root',
 })

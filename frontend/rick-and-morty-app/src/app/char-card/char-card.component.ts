@@ -10,14 +10,13 @@ import { CharDetailsComponent } from '../char-details/char-details.component';
 })
 export class CharCardComponent {
   @Input() char!: Character;
-  isFavourite! : boolean ;
   constructor(private dialog: MatDialog){ }
 ngOnInit(){
 }
 
 onCharSelect(){
   const dialogRef = this.dialog.open(CharDetailsComponent, {
-    data:{ char : this.char ,isFavourite: false }
+    data:{ char : this.char }
   });
 }
 }

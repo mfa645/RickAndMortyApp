@@ -9,7 +9,7 @@ export abstract class FavCharApiService {
 
   public abstract updateFavChar(id: number, favChar: FavCharacter): Observable<any>;
 
-  public abstract addFavChar(char: Character): Observable<FavCharacter>;
+  public abstract addFavChar(favChar: FavCharacter): Observable<FavCharacter>;
 
   public abstract deleteFavChar(id: number): Observable<FavCharacter>;
 }
