@@ -1,2 +1,31 @@
-<p>{{data.name}}</p>
+
+<div class="window">
+  <div class="header">
+    <mat-icon (click)="close()" class = "clickable close">close</mat-icon>
+  </div>
+  <div class="contentWrapper">
+    <div class="imgWrapper">
+      <img src={{data.image}} alt={{data.name}} class="charImg">
+    </div>
+    <div class= "charDetails">
+      <h1>{{data.name}}</h1>
+      <hr>
+      <section>
+        <h2 class="text-gray">Status :</h2><span [ngClass]="{'dead':data.status=='Dead', 'unknown':data.status=='unknown'}" class="status_icon"></span><h2>{{data.status}}</h2>
+      </section>
+      <section>
+        <h2 class="text-gray">Species : {{data.species}}</h2>
+
+      </section>
+      <section>
+        <h2 class="text-gray">Gender : {{data.gender}}</h2>
+      </section>
+      <section>
+        <h2 class="text-gray">Created : {{data.created}}</h2>
+      </section>
+
+    </div>
+    <img class="clickable favicon" src="/assets/fav.svg" alt="favicon" />
+  </div>
+</div>
 
