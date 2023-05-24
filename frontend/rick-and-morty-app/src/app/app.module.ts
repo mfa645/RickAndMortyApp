@@ -14,7 +14,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { CharCardComponent } from './char-card/char-card.component';
 import { CharApiService } from './services/char-api.service';
+import { FavCharApiService } from './services/fav-char-api.service';
 import { RemoteCharApiService } from './services/remote-char-api.service';
+import { RemoteFavCharApiService } from './services/remote-fav-char-api.service';
 import { RemoteApiService } from './services/remote-api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
@@ -22,6 +24,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { CharDetailsComponent } from './char-details/char-details.component';
+import { FavCharListComponent } from './fav-char-list/fav-char-list.component';
+import { RemoteScrapperService } from './services/remote-scrapper.service';
+import { ScrapperService } from './services/scrapper.service';
 
 
 
@@ -35,7 +40,8 @@ import { CharDetailsComponent } from './char-details/char-details.component';
     CharListComponent,
     AutocompleteComponent,
     CharCardComponent,
-    CharDetailsComponent
+    CharDetailsComponent,
+    FavCharListComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +61,9 @@ import { CharDetailsComponent } from './char-details/char-details.component';
   ],
   providers: [
     { provide: CharApiService, useClass: RemoteCharApiService },
+    { provide: FavCharApiService, useClass: RemoteFavCharApiService },
+    { provide: ScrapperService, useClass: RemoteScrapperService },
+
   ],
   bootstrap: [AppComponent]
 })

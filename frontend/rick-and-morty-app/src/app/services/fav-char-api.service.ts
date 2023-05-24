@@ -1,9 +1,14 @@
-import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { FavCharacter } from '../models/FavCharacter';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class FavCharApiService {
+export abstract class FavCharApiService {
+  public abstract getFavChars(): Observable<FavCharacter[]>;
 
-  constructor() { }
+  public abstract getFavChar(id: number): Observable<FavCharacter>;
+
+  public abstract updateFavChar(id: number, favChar: FavCharacter): Observable<any>;
+
+  public abstract addFavChark(favChar: FavCharacter): Observable<FavCharacter>;
+
+  public abstract deleteFavChar(id: number): Observable<FavCharacter>;
 }

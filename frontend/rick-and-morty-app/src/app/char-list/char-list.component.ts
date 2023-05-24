@@ -5,8 +5,6 @@ import { Character } from '../models/Character';
 import { CharCardComponent } from '../char-card/char-card.component';
 import { Subscription } from 'rxjs';
 
-
-
 @Component({
   selector: 'app-char-list',
   templateUrl: './char-list.component.html',
