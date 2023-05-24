@@ -17,7 +17,7 @@ public class RickymortyApplication {
 		CorsConfiguration corsConfiguration = new CorsConfiguration();
 		corsConfiguration.setAllowCredentials(true);
 		corsConfiguration.setAllowedOrigins(Arrays.asList("http://localhost:4200",
-				"http://localhost:8080", "https://ualdra.github.io"));
+				"http://localhost:8080", "http://localhost:8081","https://ualdra.github.io"));
 		corsConfiguration.setAllowedHeaders(Arrays.asList("Origin",
 				"Access-Control-Allow-Origin", "Content-Type",
 				"Accept", "Authorization", "Origin, Accept", "X-Requested-With",
@@ -35,7 +35,7 @@ public class RickymortyApplication {
 
 		return new CorsFilter(urlBasedCorsConfigurationSource);
 	}
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(RickymortyApplication.class, args);
 	}
