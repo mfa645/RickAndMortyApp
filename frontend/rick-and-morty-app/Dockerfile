@@ -11,6 +11,6 @@ RUN npm run build --prod
 
 # Stage 2 - Run
 FROM nginx:alpine AS run
-# COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /usr/app/dist/rick-and-morty-app/ /usr/share/nginx/html
 EXPOSE 80
