@@ -9,6 +9,7 @@ import { RemoteApiService } from './remote-api.service';
 export class RemoteScrapperService implements ScrapperService{
   private scrapperUrl = `${environment.apiBaseUrl}/bot`;
   constructor(private remoteApi: RemoteApiService) {}
+
   public getQuotes(): Observable<string[]> {
     return this.remoteApi.get<string[]>(`${this.scrapperUrl}/data`);
 }
