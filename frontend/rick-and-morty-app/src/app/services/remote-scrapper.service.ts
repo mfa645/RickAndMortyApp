@@ -1,16 +1,19 @@
 import { Injectable } from '@angular/core';
 import { ScrapperService } from './scrapper.service';
-import { environment } from 'src/environments/environment.development';
-import { Observable } from 'rxjs';
 import { RemoteApiService } from './remote-api.service';
-
+import { Observable, map } from 'rxjs';
+import { HttpResponse } from '@angular/common/http';
 
 @Injectable()
-export class RemoteScrapperService implements ScrapperService{
-  private scrapperUrl = `${environment.apiBaseUrl}/bot`;
+export class RemoteScrapperService implements ScrapperService {
+  private scrapperUrl = `http://localhost:8081/api/quotes`;
   constructor(private remoteApi: RemoteApiService) {}
 
-  public getQuotes(): Observable<string[]> {
-    return this.remoteApi.get<string[]>(`${this.scrapperUrl}/data`);
-}
+  public getQuotes(): Observable<String[]> {
+    return this.remoteApi.get<any>(`${this.scrapperUrl}/data`).pipe(
+      map((response) => {
+        return response.quotes;
+      })
+    );
+  }
 }

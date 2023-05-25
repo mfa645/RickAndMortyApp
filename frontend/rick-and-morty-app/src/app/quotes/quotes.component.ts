@@ -14,8 +14,8 @@ constructor(private quoteService : ScrapperService){}
 ngOnInit(){
 this.quoteService.getQuotes().subscribe((response)=>{
   this.quotes = response;
+  this.quote = response[0];
 })
-console.log(this.quotes);
 }
 
 onGenerateQuote(){

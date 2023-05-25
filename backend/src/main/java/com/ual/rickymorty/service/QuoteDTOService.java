@@ -35,13 +35,9 @@ public class QuoteDTOService {
         page.navigate("https://www.scarymommy.com/rick-morty-quotes");
         page.waitForSelector(
                 ".AOL > ol");
-
         Document webPage = Jsoup.parse(page.content());
-        System.out.println(webPage);
-        System.out.println(webPage.select("ol>li"));
-        List<String> quotes = webPage.select("ol > li").eachText();
 
-        System.out.println(quotes);
+        List<String> quotes = webPage.select("ol > li").eachText();
 
         if (quotes == null) {
             return null;

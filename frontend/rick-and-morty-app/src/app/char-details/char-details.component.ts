@@ -57,6 +57,9 @@ export class CharDetailsComponent implements OnInit {
       if (!this.isFav) {
         console.log('char deleted with id' + this.favChar.id);
         this.favCharApi.deleteFavChar(this.favChar.id).subscribe({
+          next: () => {
+            this.router.navigate([`/favChars`]);
+        },
           error: () => {},
         });
       }
@@ -87,6 +90,9 @@ export class CharDetailsComponent implements OnInit {
     else if (this.wasFav && !this.isFav) {
       console.log('char deleted with id' + this.wasFav);
       this.favCharApi.deleteFavChar(this.wasFav).subscribe({
+        next: () => {
+          this.router.navigate([`/favChars`]);
+      },
         error: () => {},
       });
     }

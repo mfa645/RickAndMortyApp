@@ -30,7 +30,7 @@
       <section *ngIf="favChar">
         <h2>Comments :
           <!-- <mat-form-field appearance="fill"> -->
-          <input matInput [(ngModel)]="favChar.comments" placeholder="Your comments.." maxlength="50" />
+          <input matInput class="input" [(ngModel)]="favChar.comments" placeholder="Your comments.." maxlength="50" />
           <div [hidden]="!requestFailed ">
             <small>{{ error }}</small>
           </div>
