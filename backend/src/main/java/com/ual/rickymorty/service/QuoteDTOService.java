@@ -37,15 +37,16 @@ public class QuoteDTOService {
                 ".AOL > ol");
 
         Document webPage = Jsoup.parse(page.content());
-
+        System.out.println(webPage);
+        System.out.println(webPage.select("ol>li"));
         List<String> quotes = webPage.select("ol > li").eachText();
+
+        System.out.println(quotes);
 
         if (quotes == null) {
             return null;
         }
-
-        quotesResult=(String[]) quotes.toArray();
-
+        quotesResult=  quotes.toArray(new String[0]);
         page.close();
 
         return quotesResult;
